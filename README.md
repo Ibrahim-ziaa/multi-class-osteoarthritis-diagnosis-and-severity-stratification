@@ -28,7 +28,7 @@ The goal is to enhance diagnostic accuracy and support clinicians in assessing d
 
 ## **Dataset**
 - **Source**: Knee X-ray dataset containing over 10,000 labeled images.
-- **Labels**: Severity levels (0-5).
+- **Labels**: Severity levels (0-4).
 - **Preprocessing**:
   - Resize images to 224x224 pixels.
   - Normalize pixel values using ImageNet statistics.
@@ -47,7 +47,7 @@ The goal is to enhance diagnostic accuracy and support clinicians in assessing d
    - CrossEntropyLoss and Adam optimizer.
    - Early stopping to prevent overfitting.
 5. **Prediction**:
-   - Model outputs severity levels (0-5).
+   - Model outputs severity levels (0-4).
 6. **Evaluation**:
    - Metrics: Accuracy, loss.
 
@@ -56,7 +56,7 @@ The goal is to enhance diagnostic accuracy and support clinicians in assessing d
 ## **Model Architecture**
 - **Base Model**: EfficientNet-B0 (pretrained on ImageNet).
 - **Classifier**:
-  - Fully connected layer with 6 output nodes for multi-class classification.
+  - Fully connected layer with 5 output nodes for multi-class classification.
 - **Optimization**:
   - Loss Function: CrossEntropyLoss.
   - Optimizer: Adam with weight decay.
@@ -103,7 +103,7 @@ The goal is to enhance diagnostic accuracy and support clinicians in assessing d
      python classify_image.py --image_path ./data/sample_xray.png
      ```
 4. **Output**:
-   - The predicted severity level (0-5) is displayed along with the input image.
+   - The predicted severity level (0-4) is displayed along with the input image.
 
 ---
 
